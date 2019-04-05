@@ -5,7 +5,7 @@ import java.awt.Graphics
 import java.awt.Point
 import Window
 
-class Floor (val xPos : Double, val yPos : Double , val width : Int, val height : Int, val color : Color = Color.BLACK) : Shape() {
+class Floor (xPos : Double, yPos : Double , val width : Int, val height : Int, color : Color = Color.BLACK) : Shape(xPos, yPos, color=color) {
     override fun getPoints() : ArrayList<Point> {
         val arr = ArrayList<Point>()
         for (yVal in yPos.toInt()..(yPos + height).toInt()) {
@@ -32,7 +32,7 @@ class Floor (val xPos : Double, val yPos : Double , val width : Int, val height 
         return arr
     }
 
-    fun drawFloor (w : Window) {
+    override fun redraw (w : Window) {
         var g : Graphics = w.graphics
 
         g.color = this.color

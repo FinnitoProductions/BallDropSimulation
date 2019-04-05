@@ -17,12 +17,10 @@ fun main () {
     val b = Ball(10.0, 10.0, 50)
     val f = Floor(0.0, 500.0, FRAME_WIDTH, 10)
 
+    Thread.sleep(1000)
+    f.redraw(w)
+    b.redraw(w)
 
-    Thread.sleep(4000)
-
-    f.drawFloor(w)
-
-    b.getBoundingPoints()
     while (true) {
         val startTime = System.nanoTime()
 
@@ -32,6 +30,7 @@ fun main () {
 //        println(System.nanoTime())
         val endTime = System.nanoTime()
 
-        Thread.sleep((FRAME_PERIOD_MS))// - (endTime - startTime) / (Math.pow(10.0, 6.0))).toLong())
+        println(endTime - startTime)
+        Thread.sleep(Math.max(0, (FRAME_PERIOD_MS - (endTime - startTime) / (Math.pow(10.0, 6.0))).toLong()))
     }
 }
