@@ -6,6 +6,13 @@ import javax.swing.JFrame
 
 val FRAME_WIDTH = 700
 val FRAME_HEIGHT = 700
+
+/**
+ * Starts up the simulation and periodically updates the screen.
+ *
+ * @author Finn Frankis
+ * @since 4/4/19
+ */
 fun main () {
     val frame = JFrame("Simulation")
     frame.defaultCloseOperation = JFrame.EXIT_ON_CLOSE

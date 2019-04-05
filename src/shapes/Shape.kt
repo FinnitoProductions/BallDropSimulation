@@ -5,6 +5,12 @@ import Window
 import java.awt.Color
 import java.awt.Point
 
+/**
+ * Represents a general shape with given position, velocity, acceleration, and jerk.
+ *
+ * @author Finn Frankis
+ * @since 4/4/19
+ */
 abstract class Shape {
     var xPos : Double
         set (value) {

@@ -5,6 +5,12 @@ import java.awt.Color
 import java.awt.Graphics
 import java.awt.Point
 
+/**
+ * Represents a ball, or a circular, mobile shape.
+ *
+ * @author Finn Frankis
+ * @since 4/4/19
+ */
 class Ball (xPos : Double, yPos: Double, val radius : Int, color : Color = Color.RED) : Shape(xPos, yPos, color=color, yVel=50.0, yAccel = 50.0, xVel = 50.0, xAccel = 50.0) {
     override fun redraw (w : Window) {
         var g : Graphics = w.graphics
