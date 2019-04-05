@@ -38,10 +38,10 @@ class Floor (xPos : Double, yPos : Double , val width : Int, val height : Int, c
         return arr
     }
 
-    override fun redraw (w : Window) {
-        var g : Graphics = w.graphics
+    override fun redraw () {
+        var g : Graphics = Window.graphics
 
-        g.color = w.backgroundColor
+        g.color = Window.backgroundColor
         g.fillRect(oldXPos.toInt(), oldYPos.toInt(), width, height)
 
         g.color = this.color

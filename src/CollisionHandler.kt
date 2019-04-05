@@ -6,9 +6,9 @@ import shapes.Shape
  * @author Finn Frankis
  * @version 4/5/19
  */
-class CollisionHandler (private val shapes : Array<Shape>) {
+class CollisionHandler (private val shapes : ArrayList<Shape>) {
 
-    fun tick(w : Window) {
+    fun tick() {
         for (s1 in shapes) {
             for (s2 in shapes) {
                 if (s1 != s2 && s1.didCollide(s2)) {

@@ -8,7 +8,8 @@ import javax.swing.JPanel
  * @author Finn Frankis
  * @since 4/4/19
  */
-class Window (val backgroundColor : Color = Color.GRAY) : JPanel() {
+object Window : JPanel() {
+    val backgroundColor : Color = Color.GRAY
     override fun paintComponent (g : Graphics) {
         super.paintComponent(g)
         this.background = backgroundColor

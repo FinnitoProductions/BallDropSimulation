@@ -15,34 +15,12 @@ val FRAME_HEIGHT = 700
  * @since 4/4/19
  */
 fun main () {
-    val frame = JFrame("Simulation")
-    frame.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-    frame.size = Dimension(FRAME_WIDTH, FRAME_HEIGHT)
-    val w = Window()
-    frame.contentPane.add(w)
-    frame.isVisible = true
+    Simulation.addShape(Ball(10.0, 10.0, 50))
+    Simulation.addShape(Floor(0.0, 500.0, FRAME_WIDTH, 10))
 
-    val b = Ball(10.0, 10.0, 50)
-    val f = Floor(0.0, 500.0, FRAME_WIDTH, 10)
-    val shapes : Array<Shape> = arrayOf(b, f)
-
-    Thread.sleep(1000)
-    f.redraw(w)
-    b.redraw(w)
-
-    val handler = CollisionHandler(shapes)
-
+    Simulation.start()
+    
     while (true) {
-        val startTime = System.nanoTime()
-        for (s in shapes) {
-            s.tick(w)
-        }
-        handler.tick(w)
-//        println(System.nanoTime())
-//        System.out.println(b.didCollide(f))
-//        println(System.nanoTime())
-        val endTime = System.nanoTime()
-
-        Thread.sleep(Math.max(0, (FRAME_PERIOD_MS - (endTime - startTime) / (Math.pow(10.0, 6.0))).toLong()))
+        Simulation.tick()
     }
 }

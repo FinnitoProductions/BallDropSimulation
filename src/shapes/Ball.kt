@@ -12,10 +12,10 @@ import java.awt.Point
  * @since 4/4/19
  */
 class Ball (xPos : Double, yPos: Double, val radius : Int, color : Color = Color.RED) : Shape(xPos, yPos, color=color, yVel=50.0, yAccel = 50.0) {
-    override fun redraw (w : Window) {
-        var g : Graphics = w.graphics
+    override fun redraw () {
+        var g : Graphics = Window.graphics
 
-        g.color = w.backgroundColor
+        g.color = Window.backgroundColor
         g.fillOval(oldXPos.toInt(), oldYPos.toInt(), radius, radius)
 
         g.color = color

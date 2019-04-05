@@ -38,7 +38,7 @@ abstract class Shape {
 
     abstract fun getPoints() : ArrayList<Point>
     abstract fun getBoundingPoints() : ArrayList<Point>
-    abstract fun redraw(w : Window)
+    abstract fun redraw()
 
     constructor (xPos : Double, yPos: Double, xVel : Double = 0.0, yVel : Double = 0.0, xAccel : Double = 0.0, yAccel : Double = 0.0, xJerk : Double = 0.0, yJerk : Double = 0.0, color : Color = Color.RED)  {
         this.xPos = xPos
@@ -72,7 +72,7 @@ abstract class Shape {
         return false
     }
 
-    fun tick (w : Window) {
+    fun tick () {
         xPos += xVel * FRAME_PERIOD_S
         yPos += yVel * FRAME_PERIOD_S
 
@@ -82,6 +82,6 @@ abstract class Shape {
         xAccel += xJerk * FRAME_PERIOD_S
         yAccel += yJerk * FRAME_PERIOD_S
 
-        redraw(w)
+        redraw()
     }
 }
