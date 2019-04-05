@@ -5,8 +5,8 @@ import java.awt.Color
 import java.awt.Dimension
 import javax.swing.JFrame
 
-val FRAME_WIDTH = 700
-val FRAME_HEIGHT = 700
+const val FRAME_WIDTH = 700
+const val FRAME_HEIGHT = 700
 
 /**
  * Starts up the simulation and periodically updates the screen.
@@ -19,7 +19,7 @@ fun main () {
     Simulation.addShape(Floor(0.0, 500.0, FRAME_WIDTH, 10))
 
     Simulation.start()
-    
+
     while (true) {
         Simulation.tick()
     }

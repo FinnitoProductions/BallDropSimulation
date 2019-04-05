@@ -5,6 +5,6 @@
  * @since 4/4/19
  */
 
-val ACCEL_GRAV = 9.8
-val FRAME_PERIOD_MS = 5L
-val FRAME_PERIOD_S = FRAME_PERIOD_MS.toDouble() / 1000
+const val ACCEL_GRAV = 9.8
+const val FRAME_PERIOD_MS = 5L
+const val FRAME_PERIOD_S = FRAME_PERIOD_MS.toDouble() / 1000
