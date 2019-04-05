@@ -65,7 +65,7 @@ abstract class Shape {
 
         for (p1 in sPoints) {
             for (p2 in points) {
-                if (p1 == p2 ) { return true }
+                if (p1 == p2) { return true }
             }
         }
 

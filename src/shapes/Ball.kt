@@ -11,7 +11,7 @@ import java.awt.Point
  * @author Finn Frankis
  * @since 4/4/19
  */
-class Ball (xPos : Double, yPos: Double, val radius : Int, color : Color = Color.RED) : Shape(xPos, yPos, color=color, yVel=50.0, yAccel = 50.0, xVel = 50.0, xAccel = 50.0) {
+class Ball (xPos : Double, yPos: Double, val radius : Int, color : Color = Color.RED) : Shape(xPos, yPos, color=color, yVel=50.0, yAccel = 50.0) {
     override fun redraw (w : Window) {
         var g : Graphics = w.graphics
 
@@ -20,9 +20,6 @@ class Ball (xPos : Double, yPos: Double, val radius : Int, color : Color = Color
 
         g.color = color
         g.fillOval(xPos.toInt(), yPos.toInt(), radius, radius)
-
-
-        println("OLD: ($oldXPos, $oldYPos); NEW: ($xPos, $yPos)")
     }
 
     override fun getPoints () : ArrayList<Point> {

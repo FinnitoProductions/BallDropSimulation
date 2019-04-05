@@ -1,5 +1,6 @@
 import shapes.Ball
 import shapes.Floor
+import shapes.Shape
 import java.awt.Color
 import java.awt.Dimension
 import javax.swing.JFrame
@@ -23,21 +24,25 @@ fun main () {
 
     val b = Ball(10.0, 10.0, 50)
     val f = Floor(0.0, 500.0, FRAME_WIDTH, 10)
+    val shapes : Array<Shape> = arrayOf(b, f)
 
     Thread.sleep(1000)
     f.redraw(w)
     b.redraw(w)
 
+    val handler = CollisionHandler(shapes)
+
     while (true) {
         val startTime = System.nanoTime()
-
-        b.tick(w)
+        for (s in shapes) {
+            s.tick(w)
+        }
+        handler.tick(w)
 //        println(System.nanoTime())
 //        System.out.println(b.didCollide(f))
 //        println(System.nanoTime())
         val endTime = System.nanoTime()
 
-        println(endTime - startTime)
         Thread.sleep(Math.max(0, (FRAME_PERIOD_MS - (endTime - startTime) / (Math.pow(10.0, 6.0))).toLong()))
     }
 }
