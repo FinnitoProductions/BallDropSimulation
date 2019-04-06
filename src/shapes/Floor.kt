@@ -11,7 +11,7 @@ import Window
  * @author Finn Frankis
  * @since 4/4/19
  */
-class Floor (xPos : Double, yPos : Double , val width : Int, val height : Int, color : Color = Color.BLACK) : Shape(xPos, yPos, color=color) {
+class Floor (xPos : Double, yPos : Double , width : Int, height : Int, color : Color = Color.BLACK) : Rectangle(xPos, yPos, width, height, color=color) {
     override fun getPoints() : ArrayList<Point> {
         val arr = ArrayList<Point>()
         for (yVal in yPos.toInt()..(yPos + height).toInt()) {

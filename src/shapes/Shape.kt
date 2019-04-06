@@ -59,7 +59,7 @@ abstract class Shape {
         this.yJerk = yJerk
     }
 
-    fun didCollide (s: Shape) : Boolean {
+    open fun didCollide (s: Shape) : Boolean {
         val sPoints = s.getBoundingPoints()
         val points = getBoundingPoints()
 
@@ -84,4 +84,6 @@ abstract class Shape {
 
         redraw()
     }
+
+    abstract fun contains (p : Point) : Boolean
 }

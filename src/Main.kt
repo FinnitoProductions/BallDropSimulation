@@ -6,7 +6,7 @@ import java.awt.Dimension
 import javax.swing.JFrame
 
 const val FRAME_WIDTH = 700
-const val FRAME_HEIGHT = 700
+const  val FRAME_HEIGHT = 700
 
 /**
  * Starts up the simulation and periodically updates the screen.

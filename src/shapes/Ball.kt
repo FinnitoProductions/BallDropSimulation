@@ -11,7 +11,7 @@ import java.awt.Point
  * @author Finn Frankis
  * @since 4/4/19
  */
-class Ball (xPos : Double, yPos: Double, val radius : Int, color : Color = Color.RED) : Shape(xPos, yPos, color=color, yVel=50.0, yAccel = 50.0) {
+class Ball (xPos : Double, yPos: Double, radius : Int, color : Color = Color.RED) : Circle(xPos, yPos, radius, color=color, yVel=50.0, yAccel = 50.0) {
     override fun redraw () {
         var g : Graphics = Window.graphics
 
@@ -55,4 +55,15 @@ class Ball (xPos : Double, yPos: Double, val radius : Int, color : Color = Color
 
         return arr
     }
+
+    override fun didCollide(s : Shape) : Boolean {
+        if (s is Floor) {
+
+        }
+        else if (s is Ball) {
+
+        }
+        return false
+    }
+
 }

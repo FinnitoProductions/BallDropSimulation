@@ -3,6 +3,7 @@ import shapes.Floor
 import shapes.Shape
 import java.awt.Dimension
 import java.lang.Exception
+import java.lang.IllegalArgumentException
 import javax.swing.JFrame
 
 /**
@@ -62,6 +63,12 @@ object Simulation {
 
         val endTime = System.nanoTime()
 
-        Thread.sleep(Math.max(0, (FRAME_PERIOD_MS - (endTime - startTime) / (Math.pow(10.0, 6.0))).toLong()))
+        val loopTimeMs = (endTime - startTime) / Math.pow(10.0, 6.0)
+        try {
+            Thread.sleep((FRAME_PERIOD_MS - (endTime - startTime) / (Math.pow(10.0, 6.0))).toLong())
+        }
+        catch (e : IllegalArgumentException) {
+            e.printStackTrace()
+        }
     }
 }
